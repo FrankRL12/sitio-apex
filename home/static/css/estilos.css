@@ -1,0 +1,479 @@
+body {
+    background: #870000;  
+    background: -webkit-linear-gradient(to right, #190A05, #870000);  
+    background: linear-gradient(to right, #190A05, #870000); 
+  }
+  
+  
+  nav {
+    background: #000000;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-family: 'Bebas Neue', cursive;
+    height: 50px;
+    font-size: 48px; /* ajusta el tamaño del texto */
+    font-weight: bold; /* ajusta el grosor del texto */
+    color: #ffffff; /* ajusta el color del texto */
+    text-transform: uppercase; /* convierte el texto en mayúsculas */
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px #000000;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .links li {
+    list-style: none;
+    margin-left: 20px;
+  }
+  
+  .links a{
+    padding: 15px;
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 2px 2px #000000;
+  }
+  .links a::after{
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    position: relative;
+  }
+  .links a::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'GLITCH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }
+  
+  .links a:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow: -3px -3px 0px #ff0000, 3px 3px 0px #E94BE8;
+    background-color: transparent;
+    border: 3px solid rgb(255, 0, 0);
+  }
+  
+  .links a:hover {
+    text-shadow: -1px -1px 0px #ff0000, 1px 1px 0px #00eeff;
+  }
+  
+  .links a:hover {
+    background-color: transparent;
+    border: 1px solid rgb(255, 0, 0);
+    box-shadow: 0px 10px 10px -10px rgb(255, 0, 0);
+  }
+  
+  @keyframes glitch_4011 {
+    0% {
+      clip-path: var(--move1);
+      transform: translate(0px,-10px);
+    }
+  
+    10% {
+      clip-path: var(--move2);
+      transform: translate(-10px,10px);
+    }
+  
+    20% {
+      clip-path: var(--move3);
+      transform: translate(10px,0px);
+    }
+  
+    30% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    40% {
+      clip-path: var(--move5);
+      transform: translate(10px,-10px);
+    }
+  
+    50% {
+      clip-path: var(--move6);
+      transform: translate(-10px,10px);
+    }
+  
+    60% {
+      clip-path: var(--move1);
+      transform: translate(10px,-10px);
+    }
+  
+    70% {
+      clip-path: var(--move3);
+      transform: translate(-10px,10px);
+    }
+  
+    80% {
+      clip-path: var(--move2);
+      transform: translate(10px,-10px);
+    }
+  
+    90% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    100% {
+      clip-path: var(--move1);
+      transform: translate(0);
+    }
+  }
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .links {
+      display: none;
+    }
+    
+    .burger {
+      display: block;
+    }
+    
+    .burger.active .line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+    
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .burger.active .line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+    
+    .links {
+      display: block;
+      position: fixed;
+      top: 70px;
+      right: 0;
+      background-color: #000000;
+      width: 50%;
+      height: calc(100vh - 70px);
+      z-index: 99;
+      padding: 20px;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(100%);
+    }
+    
+    .links li {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+    
+    .links a {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      text-shadow: 2px 2px #000000;
+    }
+    
+    .links.active {
+      transform: translateX(0);
+    }
+  }
+  
+  
+  
+  
+  .bg-video {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    margin-top: 80px;
+    border-radius: none;
+  }
+  .bg-video video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+  } 
+  .video{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+  }
+  .stap-peli {
+      font-size: 6rem;
+      margin-bottom: 30px;
+      color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 2px #000000;
+  }
+  .p{
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 2px #000000;
+  }
+  .comenzar{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 40px;
+    border-radius: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  .Titulo-principal{
+    font-family: 'Bangers', cursive;
+    font-size: 50px;
+    color: #FFD700;
+    text-shadow: 2px 2px #000000;
+  }
+  .descripcion{
+    font-family: 'Bangers', cursive;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  .reproducir{
+    text-decoration: none;
+    background-color: #fdcb00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0 #f0c14b;
+    transition: 3ms;
+  }
+  .reproducir:hover{
+    background-color: #be9800;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0 #8d6602;
+    transition: 3ms;
+  }
+  .principal-des{
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 15px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  .cards{
+    padding: 15px;
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #ff0000a1, #00000088), url('/static/img/backgraund.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card{
+    background: #200122;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .backgraund{
+    background-image: linear-gradient(to bottom, #ff0000a1, #00000088), url('/static/img/backgraund.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card:hover {
+    transform: scale(1.1);
+  }
+  .card-title{
+    font-family: 'Bebas Neue', cursive;
+    color: #fff;
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px #000000;
+  }
+  .card-text{
+    font-family: 'Bebas Neue', cursive;
+    color: #fff;
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px #000000;
+  }
+  .Titulo-2{
+    font-size: 38px; /* ajusta el tamaño del texto */
+    font-weight: bold; /* ajusta el grosor del texto */
+    color: #ffffff; /* ajusta el color del texto */
+    text-transform: uppercase; /* convierte el texto en mayúsculas */
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px #000000;
+  }
+  .Temporadas{
+    font-family: 'Bangers', cursive;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+    font-size: 30px;
+  }
+  .card-1{
+    height: 60%;
+  }
+  .Pagina2{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    color: #fff;
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px #000000;
+  }
+
+  video{
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+  }
+  .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .border{
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .blog-flotando{
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 15px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  .blog-radios{
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  }
+  .cards-1:hover{
+    transform: scale(1.1);
+  }
+  .redes{
+    padding: auto;
+  }
+    
+  footer{
+    background: #000000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 2px #000000;
+    text-decoration: none;
+  }
+  .informe{
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 2px #000000;
+  }
+  .localizacion{
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 2px #000000;
+  }
+  .redes{
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 2px #000000;
+    text-decoration: none;
+  }
+  .blog{
+    padding: 30px;
+    margin-top: 100px;
+  }
+  .card {
+    background-color: #f5d76e;
+    border-color: #f7dc6f;
+  }
+  
+  .blog-imagen {
+    height: 200px;
+    object-fit: cover;
+  }
+  .cards-2{
+    background: #e5ff00;
+    border-radius: 10px;
+  }
+  .descargas-1{
+    margin-top: 50px;
+    padding: 100px;
+  }
+  .contacto{
+    margin-top: 50px;
+    padding: 100px;
+  }
+  

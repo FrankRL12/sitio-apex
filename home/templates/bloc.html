@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+
+{% load static %}
+
+{% block content %}
+<main class="blog">
+    <h2 class="Pagina2">Blog Del Videojuego APEX-LEGENDS.</h2>
+    <div class="container">
+      <div class="row">
+        {% for bloc in blocs %}
+        <div class="col-md-4">
+          <div class="card" style="width: 400px; height: 400px;">
+            <img src="{{bloc.imagen.url}}" class="w-100 h-100 img-fluid" style="object-fit: cover;" alt="Descripción de la imagen">
+            <div class="card-body">
+              <h2 class="card-title">{{bloc.titulo}}</h2>
+              <p class="card-text">{{bloc.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    
+  </main>
+{% endblock content %}

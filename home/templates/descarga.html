@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="container descargas-1">
+        <h2 class="Pagina2">Descarga tu fondos de pantalla de  APEX-LEGENDS.</h2>
+        <div class="row">
+          {% for descarga in descargas %}
+          <div class="col-md-6">
+            <div class="card">
+              <img src="{{descarga.imagen.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{descarga.titulo}}</h5>
+                <p class="card-text">{{descarga.descripcion}}</p>
+                <a href="{{descarga.imagen.url}}" class="btn btn-primary" download="{{descarga.imagen.name}}">Descargar</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+</main>
+{% endblock content %}

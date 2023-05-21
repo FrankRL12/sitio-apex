@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+
+
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="container mt-4"> 
+        <h2 class="Pagina2">Grandes Aventura de APEX.</h2>
+          <div class="container">
+            <div class="row">
+              {% for temporada in temporadas %}
+              <div class="col-md-4 my-3">
+                <div class="video-wrapper">
+                  <video src="{{temporada.video.url}}" controls></video>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{temporada.titulo}}</h5>
+                    <p class="card-text">{{temporada.descripcion}}</p>
+                 </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  </main>
+{% endblock content %}
