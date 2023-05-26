@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Temporada(models.Model):
-    video = models.FileField(upload_to='videos/')
+    video = models.FileField(upload_to='videos')
     titulo= models.CharField(max_length=50)
     descripcion= models.CharField(max_length=100)
     creado=models.DateTimeField(auto_now_add=True)
@@ -16,7 +16,7 @@ class Temporada(models.Model):
     
 
 class Bloc(models.Model):
-    imagen=models.ImageField(upload_to='bloc/')
+    imagen=models.ImageField(upload_to='bloc')
     titulo=models.CharField(max_length=30)
     descripcion=models.CharField(max_length=100)
     creado=models.DateTimeField(auto_now_add=True)
@@ -30,7 +30,7 @@ class Bloc(models.Model):
 
 
 class Descarga(models.Model):
-    imagen=models.ImageField(upload_to='descarga/')
+    imagen=models.ImageField(upload_to='descarga')
     titulo=models.CharField(max_length=30)
     descripcion=models.CharField(max_length=100)
     creado=models.DateTimeField(auto_now_add=True)

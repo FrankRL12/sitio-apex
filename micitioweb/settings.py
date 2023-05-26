@@ -140,7 +140,7 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
 MEDIA_URL = '/media/'
 # Render requires the MEDIA_ROOT to be an absolute path.
 # You can use the `Path` module to construct the absolute path.
-MEDIA_ROOT = Path(BASE_DIR).resolve() / 'media'
+MEDIA_ROOT = Path(BASE_DIR).resolve() / 'home' / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
