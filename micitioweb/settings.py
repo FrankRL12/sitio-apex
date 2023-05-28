@@ -137,7 +137,8 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-MEDIA_ROOT = '/path/to/media/folder/'
+# Ruta de acceso a los archivos de medios
+MEDIA_ROOT = Path(BASE_DIR) / 'media'
 
 # URL para acceder a los archivos de medios
 MEDIA_URL = '/media/'
