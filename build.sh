@@ -4,13 +4,17 @@ set -o errexit
 
 pip install -r requirements.txt
 
+# Crear carpeta de medios
+MEDIA_ROOT="/path/to/media/folder/"
+mkdir -p "$MEDIA_ROOT"
+
 
 python manage.py collectstatic --no-input
 python manage.py makemigrations
 python manage.py migrate
 
 # Variables de entorno para el superusuario
-SUPERUSER_USERNAME="admin6"
+SUPERUSER_USERNAME="admin0"
 SUPERUSER_EMAIL="ramirezlujanojosefrancisco4@gmail.com"
 SUPERUSER_PASSWORD="123456"
 

@@ -137,10 +137,10 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
+MEDIA_ROOT = '/path/to/media/folder/'
+
+# URL para acceder a los archivos de medios
 MEDIA_URL = '/media/'
-# Render requires the MEDIA_ROOT to be an absolute path.
-# You can use the `Path` module to construct the absolute path.
-MEDIA_ROOT = Path(BASE_DIR).resolve() / 'home' / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
