@@ -11,7 +11,7 @@
           {% for descarga in descargas %}
           <div class="col-md-6">
             <div class="card">
-              <img src="{{descarga.imagen.url}}" class="card-img-top" alt="...">
+              <img src="{% static 'imgl/francisco.jpg' %}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{descarga.titulo}}</h5>
                 <p class="card-text">{{descarga.descripcion}}</p>
